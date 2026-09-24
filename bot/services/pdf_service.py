@@ -20,7 +20,7 @@ TRANSLATIONS = {
         "summary": "Profesijné zhrnutie",
         "experience": "Pracovné skúsenosti",
         "education": "Vzdelanie",
-        "skills": "Odborné zručності",
+        "skills": "Odborné zručnosti",
         "languages": "Jazykové znalosti",
         "projects": "Projekty a skúsenosti",
         "driving_license": "Vodičský preukaz",
