@@ -1,0 +1,304 @@
+@page {
+    size: A4;
+    margin: 0;
+}
+
+@font-face {
+    font-family: "Font Awesome 6 Free";
+    src: url("fonts/fa-solid-900.ttf") format("truetype");
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: "Font Awesome 6 Brands";
+    src: url("fonts/fa-brands-400.ttf") format("truetype");
+    font-weight: 400;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #ffffff;
+    color: #17212b;
+    font-family: "Avenir Next", "Trebuchet MS", Arial, sans-serif;
+    font-size: 9.4pt;
+    line-height: 1.45;
+}
+
+.cv-page {
+    display: table;
+    table-layout: fixed;
+    border-collapse: collapse;
+    width: 210mm;
+}
+
+.sidebar {
+    display: table-cell;
+    width: 64mm;
+    min-height: 297mm;
+    vertical-align: top;
+    padding: 12mm 9mm 11mm;
+    background: #152b3a;
+    color: #f5f7f8;
+}
+
+.photo-box {
+    margin: 0 0 7mm;
+    text-align: center;
+}
+
+.avatar {
+    width: 39mm;
+    height: 39mm;
+    border: 4px solid #d7a85f;
+    border-radius: 3mm;
+    object-fit: cover;
+}
+
+.sidebar-name {
+    font-size: 19pt;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    line-height: 1.05;
+    overflow-wrap: anywhere;
+}
+
+.name-last {
+    color: #d7a85f;
+}
+
+.sidebar-rule {
+    width: 24mm;
+    margin: 5mm 0 6mm;
+    border-top: 2px solid #d7a85f;
+}
+
+.sidebar-section {
+    margin: 0 0 6mm;
+    break-inside: avoid;
+}
+
+.sidebar-label,
+.eyebrow {
+    color: #d7a85f;
+    font-size: 7.5pt;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.contact-item {
+    display: table;
+    width: 100%;
+    margin-top: 3mm;
+    color: #d8e2e7;
+    font-size: 8.2pt;
+    table-layout: fixed;
+}
+
+.contact-email {
+    font-size: 7.5pt;
+    letter-spacing: -0.1px;
+}
+
+.contact-email .contact-value {
+    white-space: nowrap;
+}
+
+.contact-link a {
+    display: table-cell;
+    color: #d8e2e7;
+    text-decoration: none;
+    overflow-wrap: normal;
+}
+
+.contact-link {
+    overflow-wrap: normal;
+}
+
+.contact-link .contact-key {
+    margin-right: 0;
+}
+
+.contact-key {
+    display: table-cell;
+    width: 9mm;
+    color: #d7a85f;
+    font-size: 11pt;
+    font-weight: 900;
+    line-height: 1;
+    vertical-align: middle;
+    letter-spacing: 0.2px;
+    text-align: left;
+}
+
+.contact-icon {
+    width: 4.2mm;
+    height: 4.2mm;
+    vertical-align: middle;
+}
+
+.contact-value {
+    display: table-cell;
+    width: auto;
+    vertical-align: middle;
+    overflow-wrap: anywhere;
+}
+
+.skill-list {
+    margin-top: 3mm;
+}
+
+.skill-tag {
+    display: inline-block;
+    margin: 0 1.5mm 2mm 0;
+    padding: 1.5mm 2mm;
+    border: 1px solid #496574;
+    border-radius: 2mm;
+    color: #f5f7f8;
+    font-size: 7.7pt;
+    line-height: 1.1;
+    overflow-wrap: anywhere;
+}
+
+.language-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 2mm;
+    margin-top: 3mm;
+    color: #d8e2e7;
+    font-size: 8.2pt;
+}
+
+.language-item strong {
+    color: #ffffff;
+}
+
+.license-value {
+    margin-top: 3mm;
+    color: #d8e2e7;
+}
+
+.main-content {
+    display: table-cell;
+    width: 146mm;
+    vertical-align: top;
+    padding: 12mm 15mm 11mm 14mm;
+    background: #ffffff;
+}
+
+.eyebrow {
+    color: #b07b2e;
+    margin-bottom: 3mm;
+    letter-spacing: 0;
+}
+
+h1 {
+    margin: 0;
+    color: #152b3a;
+    font-size: 27pt;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+    line-height: 1.05;
+}
+
+.accent-line {
+    width: 18mm;
+    margin: 3mm 0 4mm;
+    border-top: 3px solid #d7a85f;
+}
+
+.summary-text {
+    margin: 0;
+    color: #41515b;
+    font-size: 10pt;
+    line-height: 1.45;
+}
+
+.section {
+    margin: 0 0 5mm;
+    break-inside: auto;
+}
+
+.project-section {
+    break-inside: avoid;
+}
+
+h2 {
+    margin: 0 0 3mm;
+    padding-bottom: 1.5mm;
+    border-bottom: 1px solid #d8e0e3;
+    color: #152b3a;
+    font-size: 10.5pt;
+    font-weight: 700;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
+    break-after: avoid;
+}
+
+.item-block {
+    margin: 0 0 4mm;
+    break-inside: avoid;
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 5mm;
+}
+
+.role {
+    color: #17212b;
+    font-size: 11pt;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.company {
+    margin-top: 1mm;
+    color: #b07b2e;
+    font-size: 9.2pt;
+    font-weight: 700;
+}
+
+.date {
+    flex: 0 0 auto;
+    color: #78878e;
+    font-size: 8pt;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.description {
+    margin-top: 1.5mm;
+    color: #41515b;
+    font-size: 9.2pt;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    orphans: 2;
+    widows: 2;
+}
+
+.project-text {
+    padding-left: 4mm;
+    border-left: 2px solid #d7a85f;
+}
+
+.education-item {
+    margin-bottom: 4mm;
+}
+
+@media print {
+    .cv-page {
+        page-break-after: auto;
+    }
+}

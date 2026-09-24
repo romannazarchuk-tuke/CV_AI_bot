@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div class="cv-page">
+        <aside class="sidebar">
+            {% if basic.local_photo_path %}
+            <div class="photo-box">
+                <img src="{{ basic.local_photo_path }}" class="avatar" alt="Photo" />
+            </div>
+            {% endif %}
+
+            <div class="sidebar-name">
+                <div class="name-line">{{ basic.first_name }}</div>
+                <div class="name-line name-last">{{ basic.last_name }}</div>
+            </div>
+
+            <div class="sidebar-rule"></div>
+            <div class="sidebar-section">
+                <div class="sidebar-label">CONTACT</div>
+                <div class="contact-item contact-email">
+                    <span class="contact-key"><img src="icons/email.svg" class="contact-icon" alt=""/></span>
+                    <span class="contact-value">{{ basic.email }}</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-key"><img src="icons/phone.svg" class="contact-icon" alt=""/></span>
+                    <span class="contact-value">{{ basic.phone }}</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-key"><img src="icons/location.svg" class="contact-icon" alt=""/></span>
+                    <span class="contact-value">{{ basic.city }}, {{ basic.country }}</span>
+                </div>
+                {% if basic.linkedin and basic.linkedin != 'Немає' %}
+                <div class="contact-item contact-link">
+                    <span class="contact-key"><img src="icons/linkedin.svg" class="contact-icon" alt=""/></span>
+                    <a class="contact-value" href="{{ basic.linkedin_url }}">{{ basic.linkedin }}</a>
+                </div>
+                {% endif %}
+                {% if basic.github and basic.github != 'Немає' %}
+                <div class="contact-item contact-link">
+                    <span class="contact-key"><img src="icons/github.svg" class="contact-icon" alt=""/></span>
+                    <a class="contact-value" href="{{ basic.github_url }}">{{ basic.github }}</a>
+                </div>
+                {% endif %}
+            </div>
+
+            {% if cv.skills %}
+            <div class="sidebar-section">
+                <div class="sidebar-label">{{ labels.skills }}</div>
+                <div class="skill-list">
+                    {% for skill in cv.skills %}
+                    <span class="skill-tag">{{ skill }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            {% if cv.languages %}
+            <div class="sidebar-section">
+                <div class="sidebar-label">{{ labels.languages }}</div>
+                {% for lang in cv.languages %}
+                <div class="language-item"><strong>{{ lang.name }}</strong><span>{{ lang.level }}</span></div>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            {% if cv.driving_license and cv.driving_license != 'Немає' %}
+            <div class="sidebar-section">
+                <div class="sidebar-label">{{ labels.driving_license }}</div>
+                <div class="license-value">{{ cv.driving_license }}</div>
+            </div>
+            {% endif %}
+        </aside>
+
+        <main class="main-content">
+            <div class="eyebrow">CURRICULUM VITAE</div>
+            <section class="section intro-section">
+                <h1>{{ cv.position_title or 'Professional Profile' }}</h1>
+                <div class="accent-line"></div>
+                <p class="summary-text">{{ cv.summary }}</p>
+            </section>
+
+            {% if cv.experience %}
+            <section class="section">
+                <h2>{{ labels.experience }}</h2>
+                {% for exp in cv.experience %}
+                <article class="item-block">
+                    <div class="item-header">
+                        <div>
+                            <div class="role">{{ exp.title }}</div>
+                            <div class="company">{{ exp.company }}</div>
+                        </div>
+                        <div class="date">{{ exp.start_date }} — {{ exp.end_date if exp.end_date else labels.present }}</div>
+                    </div>
+                    <div class="description">{{ exp.description }}</div>
+                </article>
+                {% endfor %}
+            </section>
+            {% endif %}
+
+            {% if cv.education %}
+            <section class="section">
+                <h2>{{ labels.education }}</h2>
+                {% for edu in cv.education %}
+                <article class="item-block education-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="role">{{ edu.degree }} · {{ edu.field_of_study }}</div>
+                            <div class="company">{{ edu.institution }}</div>
+                        </div>
+                        <div class="date">{{ edu.start_year }} — {{ edu.end_year }}</div>
+                    </div>
+                </article>
+                {% endfor %}
+            </section>
+            {% endif %}
+
+            {% if cv.projects and cv.projects != 'Не вказано' %}
+            <section class="section project-section">
+                <h2>{{ labels.projects }}</h2>
+                <div class="description project-text">{{ cv.projects }}</div>
+            </section>
+            {% endif %}
+        </main>
+    </div>
+</body>
+</html>

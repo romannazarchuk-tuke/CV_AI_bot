@@ -223,3 +223,14 @@ output/
 *.sqlite3
 *.db
 __pycache__/
+.env
+.venv/
+__pycache__/
+*.py[cod]
+*.db
+output/*
+!output/.gitkeep
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.DS_Store
