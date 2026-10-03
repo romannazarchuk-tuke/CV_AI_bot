@@ -88,10 +88,15 @@ async def process_photo(message: types.Message, state: FSMContext):
         )
         user = result.scalar_one_or_none()
 
-        profile_json = json.dumps(data, ensure_ascii=False)
         if user:
-            user.profile_data = profile_json
+            try:
+                current_profile = json.loads(user.profile_data) if user.profile_data else {}
+            except json.JSONDecodeError:
+                current_profile = {}
+            current_profile.update(data)
+            user.profile_data = json.dumps(current_profile, ensure_ascii=False)
         else:
+            profile_json = json.dumps(data, ensure_ascii=False)
             user = User(
                 telegram_id=message.from_user.id,
                 profile_data=profile_json,
